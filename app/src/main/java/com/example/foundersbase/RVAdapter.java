@@ -41,12 +41,12 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         holder.founder_desc.setText(founderDetailsList.get(position).getDesc());
         holder.founder_img.setImageResource(founderDetailsList.get(position).getImgId());
 
-        holder.founder_img.setOnClickListener(v -> {
-
+        holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, FoundersBrief.class);
             intent.putExtra("founderData", founderDetailsList.get(position));
             context.startActivity(intent);
         });
+
 
     }
 
