@@ -14,6 +14,8 @@ public class FoundersBrief extends AppCompatActivity {
     private TextView founderName;
     private TextView founderDescription;
 
+    TextView backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,9 @@ public class FoundersBrief extends AppCompatActivity {
         founderImage = findViewById(R.id.founder_img);
         founderName = findViewById(R.id.founder_heading);
         founderDescription = findViewById(R.id.founder_desc);
+
+        backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(v -> finish());
 
         // Retrieve data passed from previous activity
         FounderDetails founder = (FounderDetails) getIntent().getSerializableExtra("founderData");
